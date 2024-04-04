@@ -14,7 +14,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Select a book:" Margin="49,38,437,369"/>
+        <Label Content="Select a book:" Margin="49,0,0,369" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="85"/>
         <ListView x:Name="ListView_SelectUsers"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="269,70,0,0" HorizontalAlignment="Left" Width="185" SelectionChanged="ListView_SelectUsers_SelectionChanged" Height="245" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
@@ -22,9 +22,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Select an user" Margin="269,38,183,369"/>
-        <Button Content="Save" Background="Green" BorderBrush="DarkGreen" BorderThickness="3" Margin="370,0,0,42" HorizontalAlignment="Left" Width="84" Height="28" VerticalAlignment="Bottom"/>
-        <Button Content="Close" Background="Red" BorderBrush="DarkRed" BorderThickness="3" Margin="269,364,218,42"/>
+        <Label Content="Select an user" Margin="269,0,0,369" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="119"/>
+        <Button Content="Borrow" Background="Green" BorderBrush="DarkGreen" BorderThickness="3" Margin="370,0,0,42" HorizontalAlignment="Left" Width="84" Height="28" VerticalAlignment="Bottom" Click="Button_Click"/>
+        <Button Content="Close" Background="Red" BorderBrush="DarkRed" BorderThickness="3" Margin="0,0,218,42" Height="28" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="84" Click="Button_Click_1"/>
+        <Slider Value="30" HorizontalAlignment="Left" Margin="92,0,0,52" VerticalAlignment="Bottom" Width="120"/>
 
     </Grid>
 </Window>
