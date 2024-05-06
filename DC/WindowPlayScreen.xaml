@@ -6,12 +6,23 @@
         xmlns:local="clr-namespace:DC"
         mc:Ignorable="d"
         Title="WindowPlayScreen" Height="1024" Width="1440" Background="#3C2C20">
-    <Grid>
-        <Button Content="" HorizontalAlignment="Left" Margin="51,301,0,0" VerticalAlignment="Top" Height="300" Width="300" BorderBrush="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/fss.png"/>
-            </Button.Background>
-        </Button>
+    <Window.Resources>
+    <Style TargetType="{x:Type Button}" x:Key="DugBStyle">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+        </Window.Resources>
+            <Grid>
+                <Button x:Name="DugButton" Content="" Style="{StaticResource DugBStyle}" HorizontalAlignment="Left" Margin="66,348,0,0" VerticalAlignment="Top" Height="300" Width="300" Click="Button_Click" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush x:Name="DugImage1" ImageSource="/fss.png"/>
+                    </Button.Background>
+                </Button>
+                <Label x:Name="CounterLabel" Content="Ďugcookies: 0"  FontSize="35" Foreground="#FFE48E50" Margin="56,204,0,0" FontFamily="Verdana" FontWeight="Bold" Height="144" VerticalAlignment="Top" HorizontalAlignment="Left" Width="664"/>
 
-    </Grid>
+            </Grid>
 </Window>
+
