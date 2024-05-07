@@ -8,18 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="fss.png" />
+    <None Remove="fs.png" />
     <None Remove="Image1.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Image1.png">
+    <Content Include="fs.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="fss.png">
+    <Content Include="Image1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
