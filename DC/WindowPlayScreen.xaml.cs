@@ -21,7 +21,8 @@ namespace DC
     public partial class WindowPlayScreen : Window
     {
         private int counter = 0;
-        
+        private int click = 1;
+
         public WindowPlayScreen()
         {
             InitializeComponent();
@@ -29,14 +30,20 @@ namespace DC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            counter++;
+            counter += click;
 
             CounterLabel.Content = "Ďugcookies: " + counter.ToString();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            if (counter < 100)
+            { }
+            else if (counter >= 100)
+            {
+                counter -= 100;
+                click *= 3;
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

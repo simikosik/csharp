@@ -10,31 +10,35 @@
         <Style TargetType="{x:Type Button}" x:Key="DugBStyle">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/fs.png"/>
+                        </Setter.Value>
+                    </Setter>
                 </Trigger>
+
             </Style.Triggers>
-        </Style>
+            </Style>
     </Window.Resources>
     <Grid Height="1008" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="937*"/>
             <ColumnDefinition Width="503*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="DugButton" Content="" Style="{StaticResource DugBStyle}" HorizontalAlignment="Left" Margin="52,421,0,0" VerticalAlignment="Top" Height="290" Width="290" Click="Button_Click" BorderBrush="{x:Null}">
+        <Button x:Name="DugButton" Content="" BorderBrush="{x:Null}" Style="{StaticResource DugBStyle}" HorizontalAlignment="Left" Margin="52,421,0,0" VerticalAlignment="Top" Height="290" Width="290" Click="Button_Click">
             <Button.Background>
                 <ImageBrush x:Name="DugImage1" ImageSource="/fs.png"/>
             </Button.Background>
         </Button>
-        <Button Content="Button" Margin="0,348,83,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_1" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1"/>
-        <Button Content="Button" Margin="139,0,0,0" Width="281" Background="#FFE48E50" Height="68" Click="Button_Click_2" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1"/>
-        <Button Content="Button" Margin="0,595,83,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_3" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button Content="Button" Margin="0,718,83,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_4" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Upgrade1" Margin="139,348,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_1" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Button Content="Upgrade2" Margin="139,470,0,0" Background="#FFE48E50" Height="68" Click="Button_Click_2" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="281"/>
+        <Button Content="Upgrade3" Margin="139,595,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Upgrade3" Margin="139,718,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_4" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
         <Rectangle Fill="#231912" Margin="442,-6,442,6" Grid.ColumnSpan="2"/>
         <Rectangle Opacity=".5" Margin="0,81,0,741" Fill="Black" Grid.ColumnSpan="2"/>
         <Label x:Name="CounterLabel" Content="Ďugcookies: 0"  FontSize="35" Foreground="#FFE48E50" Margin="10,143,0,0" FontFamily="Verdana" FontWeight="Bold" Height="102" VerticalAlignment="Top" HorizontalAlignment="Left" Width="458"/>
-        <Button Content="Button" Margin="0,839,83,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_4" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="Purchased upgrades" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="494,135,494,755" Grid.ColumnSpan="2"/>
-        <Label Content="Shop" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="229,143,134,763" Grid.Column="1" RenderTransformOrigin="0.6,0.553"/>
+        <Label Content="Purchased upgrades" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="494,135,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="452" Height="118" VerticalAlignment="Top"/>
+        <Label Content="Shop" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="229,143,0,0" Grid.Column="1" RenderTransformOrigin="0.6,0.553" HorizontalAlignment="Left" Width="140" Height="102" VerticalAlignment="Top"/>
 
 
 
