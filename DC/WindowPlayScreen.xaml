@@ -18,14 +18,14 @@
                 </Trigger>
 
             </Style.Triggers>
-            </Style>
+        </Style>
     </Window.Resources>
     <Grid Height="1008" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="937*"/>
             <ColumnDefinition Width="503*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="DugButton" Content="" BorderBrush="{x:Null}" Style="{StaticResource DugBStyle}" HorizontalAlignment="Left" Margin="52,421,0,0" VerticalAlignment="Top" Height="290" Width="290" Click="Button_Click">
+        <Button x:Name="DugButton" Content="" BorderBrush="{x:Null}" Style="{StaticResource DugBStyle}" HorizontalAlignment="Left" Margin="41,320,0,0" VerticalAlignment="Top" Height="290" Width="290" Click="Button_Click">
             <Button.Background>
                 <ImageBrush x:Name="DugImage1" ImageSource="/fs.png"/>
             </Button.Background>
@@ -39,6 +39,7 @@
         <Label x:Name="CounterLabel" Content="Ďugcookies: 0"  FontSize="35" Foreground="#FFE48E50" Margin="10,143,0,0" FontFamily="Verdana" FontWeight="Bold" Height="102" VerticalAlignment="Top" HorizontalAlignment="Left" Width="458"/>
         <Label Content="Purchased upgrades" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="494,135,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="452" Height="118" VerticalAlignment="Top"/>
         <Label Content="Shop" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="229,143,0,0" Grid.Column="1" RenderTransformOrigin="0.6,0.553" HorizontalAlignment="Left" Width="140" Height="102" VerticalAlignment="Top"/>
+        <Label x:Name="ClickCounter" Content="Click value: 0"  FontSize="35" FontWeight="Bold" Foreground="#FFE48E50" Margin="39,664,0,0" Height="88" VerticalAlignment="Top" HorizontalAlignment="Left" Width="292"/>
 
 
 
