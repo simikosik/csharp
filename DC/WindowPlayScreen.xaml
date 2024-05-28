@@ -5,41 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DC"
         mc:Ignorable="d"
-        Title="WindowPlayScreen" Height="1024" Width="1440" Background="#3C2C20">
+        Title="WindowPlayScreen" Height="1024" Width="1440" Background="#3C2C20"
+        WindowState="Maximized"
+        WindowStyle="None">
     <Window.Resources>
-        <Style TargetType="{x:Type Button}" x:Key="DugBStyle">
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background">
-                        <Setter.Value>
-                            <ImageBrush ImageSource="/fs.png"/>
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-
-            </Style.Triggers>
+        <Style x:Key="DugBStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <Image x:Name="ButtonImage" Source="fs.png" Stretch="Fill"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonImage" Property="Source" Value="fs.png"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonImage" Property="Source" Value="fspressed.png"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
-    <Grid Height="1008" VerticalAlignment="Top">
+    <Grid Height="1024" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="937*"/>
             <ColumnDefinition Width="503*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="DugButton" Content="" BorderBrush="{x:Null}" Style="{StaticResource DugBStyle}" HorizontalAlignment="Left" Margin="41,320,0,0" VerticalAlignment="Top" Height="290" Width="290" Click="Button_Click">
+        <Button x:Name="DugButton" Content="" BorderBrush="{x:Null}" Style="{StaticResource DugBStyle}" HorizontalAlignment="Left" Margin="43,304,0,0" VerticalAlignment="Top" Height="290" Width="290" Click="Button_Click" RenderTransformOrigin="0.437,0.496">
             <Button.Background>
-                <ImageBrush x:Name="DugImage1" ImageSource="/fs.png"/>
+                <ImageBrush x:Name="DugImage2" ImageSource="/fs.png"/>
             </Button.Background>
         </Button>
-        <Button Content="Upgrade1" Margin="139,348,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_1" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1"/>
-        <Button Content="Upgrade2" Margin="139,470,0,0" Background="#FFE48E50" Height="68" Click="Button_Click_2" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="281"/>
-        <Button Content="Upgrade3" Margin="139,595,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button Content="Upgrade3" Margin="139,718,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_4" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
-        <Rectangle Fill="#231912" Margin="442,-6,442,6" Grid.ColumnSpan="2"/>
-        <Rectangle Opacity=".5" Margin="0,81,0,741" Fill="Black" Grid.ColumnSpan="2"/>
-        <Label x:Name="CounterLabel" Content="Ďugcookies: 0"  FontSize="35" Foreground="#FFE48E50" Margin="10,143,0,0" FontFamily="Verdana" FontWeight="Bold" Height="102" VerticalAlignment="Top" HorizontalAlignment="Left" Width="458"/>
-        <Label Content="Purchased upgrades" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="494,135,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="452" Height="118" VerticalAlignment="Top"/>
-        <Label Content="Shop" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="229,143,0,0" Grid.Column="1" RenderTransformOrigin="0.6,0.553" HorizontalAlignment="Left" Width="140" Height="102" VerticalAlignment="Top"/>
-        <Label x:Name="ClickCounter" Content="Click value: 0"  FontSize="35" FontWeight="Bold" Foreground="#FFE48E50" Margin="39,664,0,0" Height="88" VerticalAlignment="Top" HorizontalAlignment="Left" Width="292"/>
+        <Button Content="Click value: 2 - 100" Margin="154,287,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_1" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Button Content="click + 0.5% of counter - 2500" Margin="154,415,0,0" Background="#FFE48E50" Height="68" Click="Button_Click_2" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="281"/>
+        <Button Content="25 Ďugcookies/s - 5000" Margin="154,544,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Upgrade3" Margin="154,672,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_4" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+        <Rectangle Fill="#231912" Margin="442,-6,442,0" Grid.ColumnSpan="2"/>
+        <Rectangle Opacity=".5" Margin="0,98,0,791" Fill="Black" Grid.ColumnSpan="2"/>
+        <Label x:Name="CounterLabel" Content="Ďugcookies: 0"  FontSize="35" Foreground="#FFE48E50" Margin="10,131,0,0" FontFamily="Verdana" FontWeight="Bold" Height="102" VerticalAlignment="Top" HorizontalAlignment="Left" Width="458"/>
+        <Label Content="Purchased upgrades" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="494,131,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="452" Height="101" VerticalAlignment="Top"/>
+        <Label Content="Shop" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="233,131,0,0" Grid.Column="1" RenderTransformOrigin="0.6,0.553" HorizontalAlignment="Left" Width="140" Height="102" VerticalAlignment="Top"/>
+        <Label x:Name="ClickCounter" Content="Click value: 0"  FontSize="35" FontWeight="Bold" Foreground="#FFE48E50" Margin="41,672,0,0" Height="88" VerticalAlignment="Top" HorizontalAlignment="Left" Width="292"/>
+        <Label x:Name="ScoreCounter" Content="Score: 0"  FontSize="35" FontWeight="Bold" Foreground="#FFE48E50" Margin="41,788,0,0" Height="88" VerticalAlignment="Top" HorizontalAlignment="Left" Width="292"/>
 
 
 

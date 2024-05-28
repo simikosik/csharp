@@ -9,11 +9,15 @@
 
   <ItemGroup>
     <None Remove="fs.png" />
+    <None Remove="fspressed.png" />
     <None Remove="Image1.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="fs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fspressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Image1.png">

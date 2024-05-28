@@ -22,7 +22,7 @@ namespace DC
     /// </summary>
     public partial class WindowPlayScreen : Window
     {
-        //private float score = 0.0f;
+        private float score = 0.0f;
         private float counter = 0.0f;
         private float click = 1.0f;
         private DispatcherTimer timer;
@@ -44,6 +44,8 @@ namespace DC
         {
             counter += (int)0;
             CounterLabel.Content = "Ďugcookies: " + counter.ToString();
+            ScoreCounter.Content = "Score: " + score.ToString();
+            ClickCounter.Content = "Click value: " + click.ToString();
         }
 
         private void InitializeTimer()
@@ -56,44 +58,47 @@ namespace DC
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            counter += (int)25; 
-            CounterLabel.Content = "Ďugcookies: " + counter.ToString(); 
+            counter += (int)250; 
+            CounterLabel.Content = "Ďugcookies: " + counter.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             counter += (int)click;
-            //score += (int)5;
+            score += (int)click;
 
             CounterLabel.Content = "Ďugcookies: " + counter.ToString();
 
             ClickCounter.Content = "Click value: " + click.ToString();
+
+            ScoreCounter.Content = "Score: " + score.ToString();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (counter < 100)
+
+            if (score < 100 && counter < 100 )
             { }
-            else if (counter >= 100)
+            else if (score >= 100 && counter >= 100)
             {
-                //score  += 100;
+                
                 counter -= 100.0f;
-                click *= 2f;
+                click *= 2.5f;
                 ((Button)sender).IsEnabled = false;
             }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (counter < 2500)
+            if (score < 1500 && counter < 1000)
             {
 
             }
-            else if (counter >= 2500)
+            else if (score >= 1500 && counter >= 1000)
             {
-                //score += 2000;
+                
                 counter -= 1000.0f;
-                click += counter *= 0.005f;
+                click += score * 0.005f;
                 ((Button)sender).IsEnabled = false;
 
             }
@@ -101,10 +106,11 @@ namespace DC
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            if (counter < 5000) { }
-            else if (counter >= 5000)
+            if (score < 5000 && counter < 5000) 
+            { }
+            else if (score >= 5000 && counter >= 5000)
             {
-                counter -= 5000;
+                
                 timer.Start();
                 ((Button)sender).IsEnabled = false;
             }
