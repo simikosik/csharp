@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:DC"
         mc:Ignorable="d"
         Title="WindowPlayScreen" Height="1024" Width="1440" Background="#3C2C20"
+        KeyDown="Window_KeyInput"
         WindowState="Maximized"
         WindowStyle="None">
+    
     <Window.Resources>
         <Style x:Key="DugBStyle" TargetType="Button">
             <Setter Property="Template">

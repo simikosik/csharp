@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
@@ -58,9 +59,22 @@ namespace DC
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            counter += (int)250; 
+            counter += (int)250;
+            score += (int)250;
             CounterLabel.Content = "Ďugcookies: " + counter.ToString();
+            ScoreCounter.Content = "Score: " + score.ToString();
         }
+        private void Window_KeyInput(object sender, KeyEventArgs e)
+        {
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.I)
+            {
+                counter += (int)69420;
+                click = 696;
+                score = 99999999999;
+
+            }
+        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -81,10 +95,11 @@ namespace DC
             { }
             else if (score >= 100 && counter >= 100)
             {
+               
+                    counter -= 100.0f;
+                    click += 1f;
+                    ((Button)sender).IsEnabled = true;
                 
-                counter -= 100.0f;
-                click *= 2.5f;
-                ((Button)sender).IsEnabled = false;
             }
         }
 
