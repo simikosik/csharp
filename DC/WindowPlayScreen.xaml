@@ -9,7 +9,7 @@
         KeyDown="Window_KeyInput"
         WindowState="Maximized"
         WindowStyle="None">
-    
+
     <Window.Resources>
         <Style x:Key="DugBStyle" TargetType="Button">
             <Setter Property="Template">
@@ -44,7 +44,6 @@
                 <ImageBrush x:Name="DugImage2" ImageSource="/fs.png"/>
             </Button.Background>
         </Button>
-        <Button Content="Click value: 2 - 100" Margin="154,287,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_1" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1"/>
         <Button Content="click + 0.5% of counter - 2500" Margin="154,415,0,0" Background="#FFE48E50" Height="68" Click="Button_Click_2" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="281"/>
         <Button Content="25 Ďugcookies/s - 5000" Margin="154,544,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
         <Button Content="Upgrade3" Margin="154,672,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_4" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
@@ -53,8 +52,11 @@
         <Label x:Name="CounterLabel" Content="Ďugcookies: 0"  FontSize="35" Foreground="#FFE48E50" Margin="10,131,0,0" FontFamily="Verdana" FontWeight="Bold" Height="102" VerticalAlignment="Top" HorizontalAlignment="Left" Width="458"/>
         <Label Content="Purchased upgrades" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="494,131,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="452" Height="101" VerticalAlignment="Top"/>
         <Label Content="Shop" FontSize="35" Foreground="#FFE48E50" FontFamily="Verdana" FontWeight="Bold" Margin="233,131,0,0" Grid.Column="1" RenderTransformOrigin="0.6,0.553" HorizontalAlignment="Left" Width="140" Height="102" VerticalAlignment="Top"/>
+        <Button Content="" Margin="154,287,0,0" Width="281" Background="#FFE48E50" Height="67" Click="Button_Click_1" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1"/>
         <Label x:Name="ClickCounter" Content="Click value: 0"  FontSize="35" FontWeight="Bold" Foreground="#FFE48E50" Margin="41,672,0,0" Height="88" VerticalAlignment="Top" HorizontalAlignment="Left" Width="292"/>
         <Label x:Name="ScoreCounter" Content="Score: 0"  FontSize="35" FontWeight="Bold" Foreground="#FFE48E50" Margin="41,788,0,0" Height="88" VerticalAlignment="Top" HorizontalAlignment="Left" Width="292"/>
+        <Label x:Name="PriceLabel1" Content="Price: " FontSize="15" Grid.Column="1" Margin="154,325,68,670"/>
+        <Label x:Name="UpgradeLabel1" Content="Cencúľ strike" FontSize="20"  Margin="154,287,68,699" Grid.Column="1"/>
 
 
 

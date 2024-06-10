@@ -26,6 +26,10 @@ namespace DC
         private float score = 0.0f;
         private float counter = 0.0f;
         private float click = 1.0f;
+        private float cost1 = 100.0f;
+        private float cost2 = 100.0f;
+        private float cost3 = 100.0f;
+        private float cost4 = 100.0f;
         private DispatcherTimer timer;
         private DispatcherTimer refresh;
         public WindowPlayScreen()
@@ -44,9 +48,12 @@ namespace DC
         private void Refresh_Tick(object sender, EventArgs e)
         {
             counter += (int)0;
-            CounterLabel.Content = "Ďugcookies: " + counter.ToString();
-            ScoreCounter.Content = "Score: " + score.ToString();
-            ClickCounter.Content = "Click value: " + click.ToString();
+            score += (int)0;
+            click += (int)0;
+            CounterLabel.Content = "Ďugcookies: " + FormatNumber(counter);
+            ScoreCounter.Content = "Score: " + FormatNumber(score);
+            ClickCounter.Content = "Click value: " + FormatNumber(click);
+            PriceLabel1.Content = "Price: " + FormatNumber(cost1);
         }
 
         private void InitializeTimer()
@@ -61,16 +68,23 @@ namespace DC
         {
             counter += (int)250;
             score += (int)250;
-            CounterLabel.Content = "Ďugcookies: " + counter.ToString();
-            ScoreCounter.Content = "Score: " + score.ToString();
+            CounterLabel.Content = "Ďugcookies: " + FormatNumber(counter);
+            ScoreCounter.Content = "Score: " + FormatNumber(score);
         }
         private void Window_KeyInput(object sender, KeyEventArgs e)
         {
             if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.I)
             {
                 counter += (int)69420;
-                click = 696;
-                score = 99999999999;
+                click = 1;
+                score = 0;
+
+            }
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.O)
+            {
+                counter = (int)0;
+                click = 1;
+                score = 0;
 
             }
         }
@@ -81,35 +95,38 @@ namespace DC
             counter += (int)click;
             score += (int)click;
 
-            CounterLabel.Content = "Ďugcookies: " + counter.ToString();
+            CounterLabel.Content = "Ďugcookies: " + FormatNumber(counter);
 
-            ClickCounter.Content = "Click value: " + click.ToString();
+            ClickCounter.Content = "Click value: " + FormatNumber(click);
 
-            ScoreCounter.Content = "Score: " + score.ToString();
+            ScoreCounter.Content = "Score: " + FormatNumber(score);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
-            if (score < 100 && counter < 100 )
+            
+            if (score < cost1 && counter < cost1 )
             { }
-            else if (score >= 100 && counter >= 100)
+            else if (score >= cost1 && counter >= cost1)
             {
-               
-                    counter -= 100.0f;
-                    click += 1f;
-                    ((Button)sender).IsEnabled = true;
+
+                counter -= cost1;
+                score -= cost1;
+                click *= 1.25f;
+                cost1 *= 1.25f;
+                ((Button)sender).IsEnabled = true;
                 
+
             }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (score < 1500 && counter < 1000)
+            if (score < 1500 && counter < cost2)
             {
 
             }
-            else if (score >= 1500 && counter >= 1000)
+            else if (score >= 1500 && counter >= cost2)
             {
                 
                 counter -= 1000.0f;
@@ -121,15 +138,33 @@ namespace DC
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            if (score < 5000 && counter < 5000) 
+            if (score < cost3 && counter < cost3) 
             { }
-            else if (score >= 5000 && counter >= 5000)
+            else if (score >= cost3 && counter >= cost3)
             {
                 
                 timer.Start();
                 ((Button)sender).IsEnabled = false;
             }
 
+        }
+        private string FormatNumber(float number)
+        {
+            
+            if (number >= 1000000000000000000)
+                return (number / 1000000000000000000).ToString("0.##Qi");
+            if (number >= 1000000000000000)
+                return (number / 1000000000000000).ToString("0.##T");
+            if (number >= 1000000000000)
+                return (number / 1000000000000).ToString("0.##T");
+            if (number >= 1000000000)
+                return (number / 1000000000).ToString("0.##B");
+            if (number >= 1000000)
+                return (number / 1000000).ToString("0.##M");
+            else if (number >= 1000)
+                return (number / 1000).ToString("0.##k");
+            else
+                return number.ToString("0");
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
